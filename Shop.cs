@@ -24,7 +24,7 @@
 
         public void Buy(string itemName, int i)
         {
-            throw new System.NotImplementedException();
+            
         }
 
 

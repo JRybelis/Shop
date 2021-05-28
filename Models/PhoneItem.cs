@@ -1,6 +1,6 @@
 ﻿namespace ConsoleShop.Models
 {
-    public class PhoneItem : Item
+    public class PhoneItem : Base.Item
     {
     }
 }

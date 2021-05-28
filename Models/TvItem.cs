@@ -1,6 +1,6 @@
 ﻿namespace ConsoleShop.Models
 {
-    public class TvItem : Item
+    public class TvItem : Base.Item
     {
 
     }
