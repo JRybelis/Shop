@@ -9,11 +9,12 @@ namespace ConsoleShop.Models.Base
     public abstract class Item
     {
         public string Name { get; set; }
-        public double Price { get; set; }
-        
-        public virtual string ToDescriptionString()
+        public decimal PriceDecimal { get; set; }
+        protected int secret = 5;
+
+        public string ToDescriptionString()
         {
-            return $" Product model: {Name}, price - ${Price}.";
+            return $" Product model: {Name}, price - ${PriceDecimal}.";
 ;        }
     }
 }

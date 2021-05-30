@@ -3,9 +3,9 @@
     public class SmartWatchItem : Base.Item
     {
         public string Brand { get; set; }
-        public override string ToDescriptionString()
+        public new string ToDescriptionString()
         {
-            return $" Brand name: {Brand}, model: {Name}, price - ${Price}.";
+            return $" Brand name: {Brand}, model: {Name}, price - ${PriceDecimal}.";
             ;
         }
     }

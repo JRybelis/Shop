@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using ConsoleShop.Models;
 using ConsoleShop.Models.Base;
+using System.Linq;
 
 namespace ConsoleShop
 {
@@ -8,30 +10,75 @@ namespace ConsoleShop
     {
         static void Main(string[] args)
         {
-            var shop = new Shop();
+            List<PhoneItem> phones = new List<PhoneItem>();
+            phones.Add(new PhoneItem()
+            {
+                Name = "iPhone",
+                PriceDecimal = 1000
+            });
+
+            phones.Add(new PhoneItem()
+            {
+                Name = "Nokia",
+                PriceDecimal = 200
+            });
+
+            phones.Add(new PhoneItem()
+            {
+                Name = "Blackberry",
+                PriceDecimal = 400
+            });
+
+            phones.Add(new PhoneItem()
+            {
+                Name = "Samsung",
+                PriceDecimal = 800
+            });
+
+            var phoneLessThan600 = phones.Where(p => p.PriceDecimal < 600).Select(p => p.Name);
+            Console.WriteLine(phoneLessThan600);
 
             //var user = new Customer("Jokūbas", 250);
-
-            var tvItem = new TvItem()
+            var command = "";
+            while (command != "Exit")
             {
-                Name = "Phillips Brilliance",
-                Price = 349.99
-            };
+                Console.WriteLine("Enter your command, please.");
+                try
+                {
+                    command = Console.ReadLine();
+                    var number = Decimal.Parse(command);
+                    Console.WriteLine($"Number supplied was {number}.");
+                    ;
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine($"Something went wrong:  {e.Message} Please try again");
+                }
+            }
 
-            var smartWatchItem = new SmartWatchItem()
-            {
-                Name = "PRO TREK",
-                Price = 219.99,
-                Brand = "Casio"
-            };
 
-            Console.WriteLine(tvItem.ToDescriptionString());
-            Console.WriteLine(smartWatchItem.ToDescriptionString());
-            shop.ListItems();
-            shop.Buy("ItemName", 50);
-            shop.LoadItems("ItemName", 50);
+            //var shop = new Shop();
 
-            Console.ReadLine();
+            //var tvItem = new TvItem()
+            //{
+            //    Name = "Phillips Brilliance",
+            //    PriceDecimal = 349.99M
+            //};
+
+            //var smartWatchItem = new SmartWatchItem()
+            //{
+            //    Name = "PRO TREK",
+            //    PriceDecimal = 219.99M,
+            //    Brand = "Casio"
+            //};
+
+            //Console.WriteLine(tvItem.ToDescriptionString());
+            //Console.WriteLine(smartWatchItem.ToDescriptionString());
+            //shop.ListItems();
+            //shop.Buy("ItemName", 50);
+            //shop.LoadItems("ItemName", 50);
+
+            //Console.ReadLine();
         }
     }
 }
