@@ -8,13 +8,10 @@ namespace ConsoleShop.Models.Base
 {
     public abstract class Item
     {
-        public string Name { get; set; }
-        public decimal PriceDecimal { get; set; }
-        protected int secret = 5;
+        private string Name { get; set; }
+        private decimal PriceDecimal { get; set; }
+        private int Quantity { get; set; }
 
-        public string ToDescriptionString()
-        {
-            return $" Product model: {Name}, price - ${PriceDecimal}.";
-;        }
+        public string ToDescriptionString() => $" Product model: {Name}, price - ${PriceDecimal}.";
     }
 }

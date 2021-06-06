@@ -10,6 +10,9 @@ namespace ConsoleShop
     {
         static void Main(string[] args)
         {
+            Shop shoppe = new Shop();
+            shoppe.Open();
+
             List<PhoneItem> phones = new List<PhoneItem>();
             phones.Add(new PhoneItem()
             {
