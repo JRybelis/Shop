@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace ConsoleShop.Models
 {
-    public class User
+    public class Customer
     {
         public decimal AccountBalance { get; set; }
 
         public void DisplayAccountBalance()
         {
-            Console.WriteLine($"Your current account balance is at £{AccountBalance}.");
+            Console.WriteLine($"The customer's current account balance is at £{AccountBalance}.");
         }
 
         public void AccountTopUp(decimal topUpAmount)
